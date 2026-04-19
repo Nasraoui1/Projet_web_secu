@@ -1,4 +1,4 @@
-name: CI/CD Pipelinee
+name: CI/CD Pipeline
 
 on:
   push:
@@ -35,9 +35,7 @@ jobs:
 
       - name: flake8
         run: |
-          # Run 1 — strict: erreurs critiques qui cassent le build (syntax, undefined names...)
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-          # Run 2 — permissif: signale les autres erreurs de style sans faire échouer le pipeline
           flake8 . --count --exit-zero --statistics
 
       - name: pytest
